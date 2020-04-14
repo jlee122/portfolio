@@ -4,5 +4,39 @@
 }
 
 .tab {
-    padding: 10px
+    padding: 10px;
+    border: 2px solid black;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+.home-main-body {
+    display: flex;
+}
+
+.col {
+    float: left;
+}
+.row:after {
+    display: table;
+}
+.profile-image {
+    width: 30%
+}
+.about {
+    width: 70%
+}
+.ucsb-image {
+    width: 30%;
+}
+.home-text {
+    width: 70%
+}
+.resume-main-body {
+    display: flex;
+}
+
+.project-main-body {
+    display: flex;
 }
