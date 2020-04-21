@@ -1,8 +1,3 @@
-.nav-bar {
-    display: flex;
-    background-color: skyblue;
-}
-
 .tab {
     padding: 10px;
     border: 2px solid black;
@@ -11,32 +6,128 @@
     margin: 10px;
 }
 
-.home-main-body {
+.tab:hover {
+    background: rgba(128, 128, 128, 0.3);
+}
+
+footer {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background: black;
+}
+
+.home-body {
     display: flex;
 }
 
-.col {
-    float: left;
+.main-body {
+    display: flex;
 }
-.row:after {
-    display: table;
+
+.about-body {
+    position: relative;
+    display: flex; 
 }
+
 .profile-image {
-    width: 30%
-}
-.about {
-    width: 70%
-}
-.ucsb-image {
-    width: 30%;
-}
-.home-text {
-    width: 70%
-}
-.resume-main-body {
-    display: flex;
+    max-width: 500px;
+    padding: 10px;
 }
 
-.project-main-body {
+.profile-image > img {
+    max-width: 100%;
+}
+
+.about-text {
+    width: 100%;
+    padding: 10px;
+}
+
+.resume-grid {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.resume-grid > .resume {
     display: flex;
+    height: 200px;
+    padding: 10px;
+}
+
+.resume-grid > .resume > .resume-pic {
+    max-width: 200px;
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.resume-grid > .resume > .resume-title {
+   
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.ucsb-image {
+    max-width: 500px;
+    padding: 10px;
+}
+
+.home-text {
+    width: 100%;
+    padding: 10px;
+}
+
+.projects-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+    grid-gap: 1rem;
+    bottom: 0;
+}
+
+.projects-grid > .project-img {
+    margin: auto;
+}
+
+.projects-grid > .project-img > img {
+    max-width: 100%;
+    cursor: pointer;
+}
+
+#back_to_top {
+    position: fixed;
+    right: 30px;
+    bottom: 50px;
+    padding: 10px;
+    opacity: 0;
+}
+
+#back_to_top.visible {
+    opacity: 1;
+}
+
+#lightbox {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: none;
+}
+
+#lightbox.clicked {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#lightbox img {
+    max-width: 50%;
+    max-height: 50%;
+    background-color: black;
+    border: 2px solid white;
 }

@@ -2,32 +2,33 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Joon's Portfolio</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Joon's Portfolio</title>     
+        <link rel="stylesheet" type="text/css" href="style.css">   
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" defer src="script.js"></script>        
     </head>
-    <body>
+    <body onLoad="currentTab('.about')">
         <div class="header">
-            <h1>Welcome to Joon's Portfolio</h1>
+            <h1>Welcome to Joon's Portfolio</h1>        
+            <nav id="nav-bar"></nav>
+            <script type="text/javascript">
+                $("#nav-bar").load("nav-bar.html")
+            </script> 
         </div>
-        <nav class="nav-var w3-bar w3-black">
-            <a href="./index.html" class="w3-button w3-bar-item">Home</a>
-
-            <a href="./about.html" class="w3-button w3-bar-item">About</a>
-
-            <a href="./resume.html" class="w3-button w3-bar-item">Resume</a>
-            <a href="./projects.html" class="w3-button w3-bar-item">Projects</a>
-            <a href="https://github.com/jlee122/portfolio" class="tab"><i class="fa fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/joonlee122/" class="tab"><i class="fa fa-linkedin"></i></a>
-        </nav>
-        <div class="row">
-            <div class="col profile-image">
-                <img src="images/profile.png" width="400px" height="400px">
+        <div class="about-body">
+            <div class="profile-image">
+                <img src="images/profile.png">
             </div>            
-            <div class="col about">
+            <div class="about-text">
                 <h2>About me</h2>
                 <p>My name is Joon Lee, currently a 4th year at UCSB, studying computer science.</p>
             </div>
         </div>
+        <!-- Footer -->
+        <footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge" style="bottom: 0;">
+            <a href="https://github.com/jlee122/portfolio"><i class="fa fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/joonlee122/"><i class="fa fa-linkedin"></i></a>
+        </footer>
     </body>
 </html> 

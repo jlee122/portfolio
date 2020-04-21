@@ -2,31 +2,70 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Joon's Portfolio</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Joon's Portfolio</title>    
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script defer src="script.js"></script>
     </head>
-    <body>
+    <body onLoad="currentTab('.projects')">
         <div class="header">
             <h1>Welcome to Joon's Portfolio</h1>
+            <nav id="nav-bar"></nav>
+            <script type="text/javascript">
+                $("#nav-bar").load("nav-bar.html")
+            </script> 
         </div>
-        <nav class="nav-var w3-bar w3-black">
-            <a href="./index.html"" class="w3-button w3-bar-item">Home</a>
-
-            <a href="./about.html" class="w3-button w3-bar-item">About</a>
-
-            <a href="./resume.html" class="w3-button w3-bar-item">Resume</a>
-            <a href="./projects.html" class="w3-button w3-bar-item">Projects</a>
-            <a href="https://github.com/jlee122/portfolio" class="tab"><i class="fa fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/joonlee122/" class="tab"><i class="fa fa-linkedin"></i></a>
-        </nav>
-        <div class="projects-main-body">
-            <img src="images/navSB.png">
-            <div>
-                <h2>NavSB (Team Lead)</h2>
-                <p>Developed an iOS AR Navigation App for UCSB campus using C++, Swift and Xcode </p>
-                <p>Implemented an AR feature that shows the route on screen interactively with user’s surrounding </p>
-            </div>
+        <div class="projects-grid">
+                <div class="project-img">
+                    <img src="images/navSB.png">
+                </div>
+                <div class="project-img">
+                    <img src="images/nexa3d-pic1.jpg">
+                </div>
+                <div class="project-img">
+                    <img src="images/nexa3d-pic2.jpg">
+                </div>
+                <div class="project-img">
+                    <img src="images/nexa3d-pic3.jpg">
+                </div>
+                <div class="project-img">
+                    <img src="images/nexa3d-pic4.jpg">
+                </div>
+                <div class="project-img">
+                    <img src="images/nexa3d-pic5.jpg">
+                </div>
         </div>
+
+        <!-- Footer -->
+        <footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+            <button class="visible" id="back_to_top">Back to top</button>
+            <a href="https://github.com/jlee122/portfolio"><i class="fa fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/joonlee122/"><i class="fa fa-linkedin"></i></a>
+        </footer>
+        <script type="text/javascript">
+            const lightbox = document.createElement('div')
+            lightbox.id = "lightbox"
+            document.body.appendChild(lightbox)
+
+            const images = document.querySelectorAll("img")
+            images.forEach(image => {
+                image.addEventListener("click", event =>{
+                    lightbox.className = "clicked";
+                    const img = document.createElement('img')
+                    img.src = image.src;                    
+                    lightbox.appendChild(img);
+                });
+            })
+            lightbox.addEventListener("click", event => {
+                console.log(event.target);
+                console.log(event.currentTarget);
+                if(event.target != event.currentTarget)
+					return;
+                lightbox.classList.remove("clicked")
+                lightbox.removeChild(lightbox.firstChild)
+            })
+        </script>
     </body>
 </html> 
